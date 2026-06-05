@@ -20,13 +20,26 @@ AI agents (Claude Desktop, Cursor, Hermes, etc.) can then search the web and ext
 Your AI Agent ←→ MCP Protocol ←→ chaojiwuzhong ←→ Your SearXNG ←→ Baidu + Sogou + ...
 ```
 
-## Why?
+## Why Chaojiwuzhong?
 
-| Problem | Solution |
-|---------|----------|
+| Problem | Our Solution |
+|---------|-------------|
 | Search APIs have quotas & costs | Your SearXNG, your rules — no per-request billing |
-| Public search engines block bots | SearXNG proxies requests via normal browser user-agent |
-| Multi-engine search is complex | Baidu + Sogou dual-engine for Chinese content, pluggable to any engine |
+| Most MCP search tools are English-only | **Baidu + Sogou dual-engine** for Chinese web, `.gov.cn` coverage |
+| Other SearXNG MCPs only search | We provide **search + extract** (full page content) |
+| Node.js / npx only | **Python** — fits the AI/ML ecosystem, works with `pip install` |
+
+### vs Other SearXNG MCP Servers
+
+| Feature | chaojiwuzhong | kevinwatt/mcp-server-searxng |
+|---------|:-----------:|:---------------------------:|
+| Language | 🐍 Python | JS (Node.js) |
+| Search | ✅ | ✅ |
+| Extract (full page) | ✅ | ❌ |
+| Chinese engines (Baidu/Sogou) | ✅ | ❌ |
+| CLI entry point | ✅ | ❌ |
+| Multi-language README | ✅ 中英双语 | ❌ English only |
+| Supported clients | Hermes, Claude, Cursor | Claude, Dive |
 
 ## Quick Start
 
@@ -154,6 +167,19 @@ Installs `beautifulsoup4` + `lxml` for higher quality content extraction.
 - The `extract` function retrieves publicly accessible web pages for personal/AI-assisted reading purposes only. Do not republish extracted content without permission from the original source.
 - This project is not affiliated with SearXNG, Baidu, Sogou, or any search engine provider.
 
+## Get Listed
+
+Want your SearXNG-based MCP tool to be discovered? Submit a PR to add it to **[awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)** — the central directory of MCP tools (88k+ stars).
+
+Example entry:
+```markdown
+- [Chaojiwuzhong](https://github.com/moxing1616/chaojiwuzhong) — SearXNG MCP with Baidu+Sogou dual-engine search &amp; full-page extraction
+```
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## License
 
 MIT © [moxing1616](https://github.com/moxing1616)
@@ -168,13 +194,26 @@ MIT © [moxing1616](https://github.com/moxing1616)
 
 AI Agent（如 Claude Desktop、Cursor、Hermes 等）可以通过 MCP 协议调用你的 SearXNG 实例，实现**无限搜索**和**网页正文抓取**。
 
-## 为什么用？
+## 为什么用 超级物种？
 
 | 痛点 | 解决 |
 |------|------|
 | 搜索 API 有配额和费用 | 用自己的 SearXNG，无调用次数限制 |
-| 公共搜索引擎封锁爬虫 | SearXNG 模拟正常浏览器请求 |
-| 多引擎搜索配置复杂 | 百度+搜狗双引擎开箱即用，中文搜索王者 |
+| 大多数 MCP 搜索只支持英文 | **百度+搜狗双引擎**，中文搜索王者，`.gov.cn` 全覆盖 |
+| 其他 SearXNG MCP 只能搜不能抓 | 我们提供 **search + extract**（全文抓取） |
+| 只能用 npx（Node.js） | **Python**，AI/ML 生态原生，`pip install` 一条命令 |
+
+### 与同类 SearXNG MCP 对比
+
+| 功能 | chaojiwuzhong | kevinwatt/mcp-server-searxng |
+|------|:-----------:|:---------------------------:|
+| 语言 | 🐍 Python | JS (Node.js) |
+| 搜索 | ✅ | ✅ |
+| 网页全文抓取 | ✅ | ❌ |
+| 中文引擎（百度/搜狗） | ✅ | ❌ |
+| CLI 命令行 | ✅ | ❌ |
+| 多语言文档 | ✅ 中英双语 | ❌ 仅英文 |
+| 支持的客户端 | Hermes, Claude, Cursor | Claude, Dive |
 
 ## 快速开始
 
