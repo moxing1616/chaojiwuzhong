@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "chaojiwuzhong"
+version = "1.0.0"
+description = "超级物种 — 自建搜索引擎 MCP Server，无限额度，百度+搜狗双引擎，为 AI Agent 提供无限搜索能力"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "moxing1616"}
+]
+keywords = ["mcp", "search", "searxng", "ai-agent", "baidu", "sogou"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Intended Audience :: Developers",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "httpx>=0.25.0",
+]
+
+[project.optional-dependencies]
+html = ["beautifulsoup4>=4.12.0", "lxml>=4.9.0"]
+
+[project.scripts]
+chaojiwuzhong = "chaojiwuzhong.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/moxing1616/chaojiwuzhong"
+Repository = "https://github.com/moxing1616/chaojiwuzhong"
+Issues = "https://github.com/moxing1616/chaojiwuzhong/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/chaojiwuzhong"]

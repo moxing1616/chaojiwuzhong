@@ -1,0 +1,18 @@
+# Hermes Agent MCP 配置示例 — 超级物种
+#
+# 将此文件内容合并到 ~/.hermes/mcp.json 的 mcpServers 字段中。
+# 如果 ~/.hermes/mcp.json 不存在，创建它并粘贴以下完整内容。
+
+{
+  "mcpServers": {
+    "chaojiwuzhong": {
+      "command": "chaojiwuzhong",
+      "args": [],
+      "env": {
+        "CHAOJIWUZHONG_URL": "http://localhost:8080",
+        "CHAOJIWUZHONG_ENGINES": "baidu,sogou",
+        "CHAOJIWUZHONG_TIMEOUT": "25"
+      }
+    }
+  }
+}
